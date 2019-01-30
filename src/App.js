@@ -1,48 +1,64 @@
 import React, {Component} from "react";
-// import logo from "./logo.svg";
 // import "./App.css";
-import Todos from "./components/Todos";
+import TodoList from "./components/TodoList";
+import Timer from "./components/Timer";
+
+const data = [
+  {name: "React 개발에 필요한 환경을 구축한다.", completed: true},
+  {
+    name: "새로운 자바스크립트 문법을 익힌다. ES2015(ES6), ES7, ES8",
+    completed: true,
+  },
+  {name: "개발 편의를 위한 VSCode IDE를 익힌다.", completed: false},
+  {name: "기본적인 Git 사용법을 익힌다.", completed: false},
+  {
+    name: "PR 코드 리뷰를 응용한 개발 프로세스를 익힌다.",
+    completed: true,
+  },
+  {name: "React로 간단한 노트 앱을 만들어본다.", completed: false},
+];
 
 class App extends Component {
+  state = {
+    data,
+    isUnmount: false,
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        data: [
+          {name: "React 개발에 필요한 환경을 구축한다.", completed: true},
+          {
+            name: "새로운 자바스크립트 문법을 익힌다. ES2015(ES6), ES7, ES8",
+            completed: true,
+          },
+          {name: "개발 편의를 위한 VSCode IDE를 익힌다.", completed: true},
+          {name: "기본적인 Git 사용법을 익힌다.", completed: true},
+          {
+            name: "PR 코드 리뷰를 응용한 개발 프로세스를 익힌다.",
+            completed: true,
+          },
+          {name: "React로 간단한 노트 앱을 만들어본다.", completed: true},
+        ],
+      });
+    }, 5000);
+
+    /*    setTimeout(() => {
+      this.setState({
+        isUnmount: true,
+      });
+    }, 10000);*/
+  }
+
   render() {
     return (
       <div className="App">
-        <Todos
-          title={"강의목표"}
-          items={[
-            "React 개발에 필요한 환경을 구축한다.",
-            "새로운 자바스크립트 문법을 익힌다. ES2015(ES6), ES7, ES8",
-            "개발 편의를 위한 VSCode IDE를 익힌다.",
-            "기본적인 Git 사용법을 익힌다.",
-            "PR 코드 리뷰를 응용한 개발 프로세스를 익힌다.",
-            "React로 간단한 노트 앱을 만들어본다.",
-          ]}
-        />
-        {/*        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer">
-            Learn React
-          </a>
-        </header>*/}
-        {/*        <div>
-          <h3>강의 목표</h3>
-          <ul>
-            <li>React 개발에 필요한 환경을 구축한다.</li>
-            <li>새로운 자바스크립트 문법을 익힌다. ES2015(ES6), ES7, ES8</li>
-            <li>개발 편의를 위한 VSCode IDE를 익힌다.</li>
-            <li>기본적인 Git 사용법을 익힌다.</li>
-            <li>PR 코드 리뷰를 응용한 개발 프로세스를 익힌다.</li>
-            <li>React로 간단한 노트 앱을 만들어본다.</li>
-          </ul>
-        </div>*/}
-        {/*<LectureGoalList />*/}
+        {!this.state.isUnmount && (
+          <TodoList title={"강의목표"} items={this.state.data} />
+        )}
+
+        <Timer expireDate={"2019-01-30T17:00:00+09:00"} />
       </div>
     );
   }
