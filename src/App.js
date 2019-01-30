@@ -58,7 +58,7 @@ class App extends Component {
           <TodoList title={"강의목표"} items={this.state.data} />
         )}
 
-        <Timer expireDate={"2019-01-30T17:00:00+09:00"} />
+        <Timer expireDate={"2019-01-30T14:03:00+09:00"} />
       </div>
     );
   }
