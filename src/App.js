@@ -7,6 +7,7 @@ import MarkEditor from "./components/MarkEditor";
 import ControlledForm from "./components/ControlledForm";
 import Toggle from "./components/Toggle";
 import {Button} from "antd";
+import Counter from "./components/Counter";
 
 const data = [
   {name: "React 개발에 필요한 환경을 구축한다.", completed: true},
@@ -64,7 +65,7 @@ class App extends Component {
       <div className="App">
         {/*        <Header />*/}
         {/*{!this.state.isUnmount && (*/}
-        <TodoList title={"강의목표"} items={this.state.data} />
+        {/*<TodoList title={"강의목표"} items={this.state.data} />*/}
         {/*)}*/}
 
         {/*        <Timer
@@ -73,8 +74,9 @@ class App extends Component {
         />*/}
         {/*        <MarkEditor />*/}
         {/*        <ControlledForm />*/}
-        <Toggle />
-        <Button type={"primary"}>Ant 스타일 버튼</Button>
+        {/*<Toggle />*/}
+        {/*<Button type={"primary"}>Ant 스타일 버튼</Button>*/}
+        <Counter />
       </div>
     );
   }
