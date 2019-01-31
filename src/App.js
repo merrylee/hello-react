@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./App.less";
+// import "./App.less";
 import TodoList from "./components/TodoList";
 import Timer from "./components/Timer";
 import Header from "./components/Header";
