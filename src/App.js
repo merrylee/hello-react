@@ -1,11 +1,12 @@
 import React, {Component} from "react";
-import "./App.css";
+import "./App.less";
 import TodoList from "./components/TodoList";
 import Timer from "./components/Timer";
 import Header from "./components/Header";
 import MarkEditor from "./components/MarkEditor";
 import ControlledForm from "./components/ControlledForm";
 import Toggle from "./components/Toggle";
+import {Button} from "antd";
 
 const data = [
   {name: "React 개발에 필요한 환경을 구축한다.", completed: true},
@@ -72,6 +73,8 @@ class App extends Component {
         />*/}
         {/*        <MarkEditor />*/}
         {/*        <ControlledForm />*/}
+        <Toggle />
+        <Button type={"primary"}>Ant 스타일 버튼</Button>
       </div>
     );
   }
