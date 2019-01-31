@@ -8,6 +8,7 @@ import ControlledForm from "./components/ControlledForm";
 import Toggle from "./components/Toggle";
 import {Button} from "antd";
 import Counter from "./components/Counter";
+import AppRouter from "./AppRouter";
 
 const data = [
   {name: "React 개발에 필요한 환경을 구축한다.", completed: true},
@@ -25,10 +26,10 @@ const data = [
 ];
 
 class App extends Component {
-  state = {
-    data,
-    isUnmount: false,
-  };
+  // state = {
+  //   data,
+  //   isUnmount: false,
+  // };
 
   componentDidMount() {
     /*   setTimeout(() => {
@@ -63,6 +64,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <header className="App-header">
+          <AppRouter />
+        </header>
         {/*        <Header />*/}
         {/*{!this.state.isUnmount && (*/}
         {/*<TodoList title={"강의목표"} items={this.state.data} />*/}
@@ -76,7 +80,7 @@ class App extends Component {
         {/*        <ControlledForm />*/}
         {/*<Toggle />*/}
         {/*<Button type={"primary"}>Ant 스타일 버튼</Button>*/}
-        <Counter />
+        {/*<Counter />*/}
       </div>
     );
   }
