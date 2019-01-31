@@ -1,4 +1,5 @@
 import React from "react";
+import {Checkbox} from "antd";
 
 class TodoListItem extends React.Component {
   state = {
@@ -13,13 +14,14 @@ class TodoListItem extends React.Component {
     const {index, name, completed} = this.props;
 
     return (
-      <li key={`todo-item-${index}`}>
-        <input
+      <li className="TodoListItem" key={`todo-item-${index}`}>
+        {/*        <input
           type="checkbox"
           checked={completed}
           onChange={this.handleCheckbox}
-        />
-        {name}
+        />*/}
+        <Checkbox checked={completed} />
+        <span>{name}</span>
       </li>
     );
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Navigation from "./components/Navigation";
+import TodoList from "./components/TodoList";
 
 const Index = () => <h2>Home</h2>;
 const About = () => <h2>About</h2>;
@@ -13,7 +14,8 @@ const AppRouter = () => (
 
       <Route path="/" exact component={Index} />
       <Route path="/about/" component={About} />
-      <Route path="/users/" component={Users} />
+      {/*<Route path="/users/" component={Users} />*/}
+      <Route path="/todolist/" component={TodoList} />
     </div>
   </Router>
 );
