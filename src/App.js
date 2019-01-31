@@ -5,6 +5,7 @@ import Timer from "./components/Timer";
 import Header from "./components/Header";
 import MarkEditor from "./components/MarkEditor";
 import ControlledForm from "./components/ControlledForm";
+import Toggle from "./components/Toggle";
 
 const data = [
   {name: "React 개발에 필요한 환경을 구축한다.", completed: true},
