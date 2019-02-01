@@ -1,6 +1,9 @@
 import React from "react";
 import TodoListItem from "../components/TodoListItem";
 import "./TodoList.less";
+import {Input, Button, Layout} from "antd";
+
+const {Content, Sider} = Layout;
 
 class TodoList extends React.Component {
   static defaultProps = {
@@ -22,28 +25,22 @@ class TodoList extends React.Component {
 
   constructor(props) {
     super(props);
-
-    // this.handleTitleClick = this.handleTitleClick().bind(this); //새로운함수반환.
   }
-
-  componentDidMount() {
-    console.log("componentDidMount !");
-  }
-
-  componentDidUnMount() {
-    console.log("componentDidUnMount !");
-  }
-
-  handleTitleClick = () => {
-    console.log("thisclick");
-  };
 
   render() {
     const {title, items} = this.props;
 
     return (
-      <div className="TodoList" style={{backgroundColor: "#ccc"}}>
-        <h3 onClick={() => this.handleTitleClick(this)}>{title}</h3>
+      <div className="TodoList" style={{}}>
+        {/*        <Layout>
+          <Content>
+            <Input placeholder="" />
+          </Content>
+          <Sider>
+            <Button>입력</Button>
+          </Sider>
+        </Layout>*/}
+
         <ul>
           {items.map((item, index) => {
             return <TodoListItem {...item} index={index} />;

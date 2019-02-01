@@ -16,9 +16,6 @@ const Navigation = () => {
           <Link to="/todolist/">TodoList</Link>
           {/*<Link to="/users/">Users</Link>*/}
         </Menu.Item>
-        {/*      <SubMenu title="SubMenu">
-        <Menu.Item>SubMenuItem</Menu.Item>
-      </SubMenu>*/}
       </Menu>
     </div>
 
